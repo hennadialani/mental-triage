@@ -18,21 +18,33 @@ overall_sentiment = re.findall('Sentiment: score of [0-9].[0-9]', text)
 overall_sentiment = ['0.5']*len(sentence_no) #struggling to make the commented code a horizontal line :(
 
 app.layout = html.Div(children=[
-    html.H1(children='Mental Triage'),
+    html.H1(children='Mental Triage',
+        style={
+            'textAlign': 'center'
+        }),
 
     html.Div(children='''
-        A sentiment profile to determine the degree of urgency in psychological intervention.
-    '''),
-
+        An NLP assistant for therapists to determine urgency of psychological intervention after a patient's phone call. Mediates the ongoing mental health crisis on college campuses by analyzing sentiment from a person's response to a freeform question standard on psychological screening questionnaires.
+    ''',
+        style={
+            'textAlign': 'center'
+        }),
+##Different font - probably try font family
+##Potentially something to show a phone number so that we can identify which patient this is
+##Something to identify what magnitude means 
+##Play with the colors of the lines 
+##Maybe background color change
     dcc.Graph(
         id='example-graph',
         figure={
             'data': [
-                {'x': sentence_no, 'y': sentiment_scores, 'type': 'line', 'name': 'Sentiment per sentence'},
+                {'x': sentence_no, 'y': sentiment_scores, 'type': 'line', 'name': 'Sentence sentiment'},
                 {'x': sentence_no, 'y': overall_sentiment, 'type': 'line', 'name': 'Overall sentiment'}
             ],
             'layout': {
-                'title': 'Sentiment'
+                'title': 'Sentiment Analysis Per Sentence',
+                'xaxis': {'title': 'Sentence Number'},
+                'yaxis': {'title': 'Sentiment Score'}
             }
         }
     )
