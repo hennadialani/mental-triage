@@ -20,7 +20,8 @@ overall_sentiment = ['0.5']*len(sentence_no) #struggling to make the commented c
 app.layout = html.Div(children=[
     html.H1(children='Mental Triage',
         style={
-            'textAlign': 'center'
+            'textAlign': 'center',
+            'font-family': 'sans-serif'
         }),
 
     html.Div(children='''
@@ -42,7 +43,7 @@ app.layout = html.Div(children=[
                 {'x': sentence_no, 'y': overall_sentiment, 'type': 'line', 'name': 'Overall sentiment'}
             ],
             'layout': {
-                'title': 'Sentiment Analysis Per Sentence',
+                'title': 'Sentiment Analyzed Over Call',
                 'xaxis': {'title': 'Sentence Number'},
                 'yaxis': {'title': 'Sentiment Score'}
             }
