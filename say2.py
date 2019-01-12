@@ -1,30 +1,36 @@
 from flask import Flask
 from flask import request
 from twilio.twiml.voice_response import VoiceResponse, Gather, Record
+import time
 
 app = Flask(__name__)
+timeSinceRecordingStart = 0
 
 
 @app.route("/intro", methods=['GET', 'POST'])
 def voice():
     resp = VoiceResponse()
-    #gath = Gather(action = "/part2", input = "speech", method = "GET")
-    #gath.say("Recording 1 start!", voice="alice")
-    #resp.append(gath)
-    resp.say("What to say?", voice="alice")
-    resp.record(action="/process",timeout = 5,transcribe = True, transcribeCallback = "/transcribeOutput", playBeep = False)
+    
+    #resp.say("What to say?", voice="alice")
+    #resp.record(action="/process",timeout = 5,transcribe = True, transcribeCallback = "/transcribeOutput", playBeep = False)
+    gath = Gather(partialResultCallback = "/partial", input = "speech", method = "GET")
+    gath.say("Recording 1 start!", voice="alice")
+    resp.append(gath)
+
     resp.say("Sorry, I didn't get that. Please try calling again", voice = "alice")
+    timeSinceRecordingStart = time.time()
     return str(resp)
 
-@app.route("/transcribeOutput", methods=['GET', 'POST'])
+@app.route("/partial", methods=['GET', 'POST'])
 def tranOut():
     resp = VoiceResponse()
-    if request.args.get("TranscriptionStatus") == "completed":
-        txt = request.args.get("TranscriptionText")
+    if time.time() - timeSinceRecordingStart >= 10:
+        txt = request.args.get("UnstableSpeechResult")
+        timeSinceRecordingStart += 10
         #write txt to file
-        with open("transription.txt","w") as newfile:
-            newfile.write(txt)
-            newfile.close()
+        #with open("transription.txt","w") as newfile:
+        #    newfile.write(txt)
+        #    newfile.close()
 
     return str(resp)
 
