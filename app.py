@@ -6,7 +6,9 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-text = 'Sentence 0 has a sentiment score of 0.8 Sentence 1 has a sentiment score of 0.9 Sentence 2 has a sentiment score of 0.8 Sentence 3 has a sentiment score of 0.2 Sentence 4 has a sentiment score of 0.1 Sentence 5 has a sentiment score of 0.4 Sentence 6 has a sentiment score of 0.3 Sentence 7 has a sentiment score of 0.4 Sentence 8 has a sentiment score of 0.2 Sentence 9 has a sentiment score of 0.9 Overall Sentiment: score of 0.5 with magnitude of 5.5'
+#text = 'Sentence 0 has a sentiment score of 0.8 Sentence 1 has a sentiment score of 0.9 Sentence 2 has a sentiment score of 0.8 Sentence 3 has a sentiment score of 0.2 Sentence 4 has a sentiment score of 0.1 Sentence 5 has a sentiment score of 0.4 Sentence 6 has a sentiment score of 0.3 Sentence 7 has a sentiment score of 0.4 Sentence 8 has a sentiment score of 0.2 Sentence 9 has a sentiment score of 0.9 Overall Sentiment: score of 0.5 with magnitude of 5.5'
+text = open(“result.text”, “r”) 
+text = text.read()
 sentiment_scores = re.findall('score of [0-9].[0-9]', text)
 sentiment_scores = [w[-3:] for w in sentiment_scores]
 sentence_no = re.findall('Sentence \d', text)
@@ -17,8 +19,6 @@ overall_sentiment = overall_sentiment*len(sentence_no)
 magnitude = re.findall('magnitude of [0-9].[0-9]', text)
 magnitude = [w[-3:] for w in overall_sentiment]
 magnitude = magnitude*len(sentence_no)
-#overall_sentiment
-#overall_sentiment = ['0.5']*len(sentence_no) #struggling to make the commented code a horizontal line :(
 
 app.layout = html.Div(children=[
     html.Div([
