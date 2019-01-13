@@ -12,10 +12,10 @@ sentiment_scores = [w[-3:] for w in sentiment_scores]
 sentence_no = re.findall('Sentence \d', text)
 sentence_no = [w[-1:] for w in sentence_no]
 overall_sentiment = re.findall('Sentiment: score of [0-9].[0-9]', text)
-#overall_sentiment = [w[-3:] for w in overall_sentiment]
-#overall_sentiment = overall_sentiment*len(sentence_no)
+overall_sentiment = [w[-3:] for w in overall_sentiment]
+overall_sentiment = overall_sentiment*len(sentence_no)
 #overall_sentiment
-overall_sentiment = ['0.5']*len(sentence_no) #struggling to make the commented code a horizontal line :(
+#overall_sentiment = ['0.5']*len(sentence_no) #struggling to make the commented code a horizontal line :(
 
 app.layout = html.Div(children=[
     html.H1(children='Mental Triage',
