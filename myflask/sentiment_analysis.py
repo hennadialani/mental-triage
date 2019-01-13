@@ -7,7 +7,7 @@ from google.cloud.language import types
 
 
 # [START language_sentiment_tutorial_print_result]
-def print_result(annotations):
+def create_ouput(annotations):
     score = annotations.document_sentiment.score
     magnitude = annotations.document_sentiment.magnitude
 
@@ -39,7 +39,7 @@ def analyze(file):
     annotations = client.analyze_sentiment(document=document)
 
     # Print the results
-    print_result(annotations)
+    create_ouput(annotations)
 # [END language_sentiment_tutorial_analyze_sentiment]
 
 
