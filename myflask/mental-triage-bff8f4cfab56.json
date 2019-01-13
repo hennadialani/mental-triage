@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "mental-triage",
+  "private_key_id": "bff8f4cfab5680f258dce6fcb7220707ea4dba63",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC2ueDcNsQS2t/Y\nz3rrLwCE1HNDcuguHvdKDN/xLZXF/KB9aC8O01bzCWH8xjfbPTbfp3IXbvarDI/y\noIokOaR6IiPM0ibhpZo47SAq1cjLJa1nlgpL3LGwIW2m3SyE+b9fuGzlr9K3qtm1\nJCW09W3iNux3uqXCF7/6qPcRYl4IMF3DMMJJnWt8yJCbskOokBPLHBOrf4pq3Act\nxEG9fSgy84LxcaEV9Kj068xOq0t8MoywR+zzJYP5wBfBoT0gAZrMTRIfXSKRMgHT\nMtIOsiM+JDo4KFk0pc7rqxX9VK3mgvVeJoqRK+UBnx5wk0nZEIFS/5mTZQayGE3o\nDKX6PrQhAgMBAAECggEAD2cu3dFeCOrbaMbgqTeelxPjnYFvsgeZN+xK6mU51WU8\n0CV6pgjJsRYO5QR+i+QmnobadsA7WeLmtYCz9GbJhyQemXLzpRzVGcxfZEz+LqW/\n7tX2izuQ3PSMbj8BtDnrWHHO+DOwkxv7WyovZYg02Zdgqp0YwPpIjCQ3I4eDvrPU\nlGzEFrYCn/p+dlMuWX8sZKkW6lnzTmPOftZMHkDrjaSaGmq01we5iJFvoeEELfwQ\nED3ebHwg97WQnSt9WrkVnsx2hkhe6G2KjmVFy6Y/vFN1R6UX0vM8r4sHpPkMC1i2\ne8W90WU/0P+YEDMEE9mIciXhWsKORZyj0XVBALWrEwKBgQDaQGrzuDFjXVOOrnxq\nt5TuWrx19+fiUZMmtLhQVT1h19OfFCHFKQgaI8v2iQ3wRI1jSMMkLLxY9MJYwXAd\nbOeuN5pDb/rhfWAuBKFNbNU3iBbWXhPVpG8km+nEWy2/nWmNPpBA+0Zpc4TqN6Ch\ncdwd7Yb/VqJQHhMWUNjX+yIbpwKBgQDWVHy02dhnNgq1YgY/yFc0LrY+Ss2KqF/X\n2Ny5wG43Klh1ah824Me9EqYvj/ho6RbaMmTlNfg4Bm0bY9DmUnDdCh4jAsCpQcRj\nyQQDU6nuEipS6QHXOflIbjaMRnwOCF/3Pf+K2QPw0+SiGhUZGxxe9m17IymVmaeX\npZxHIOKK9wKBgCri6aFGmn3aAudQpiYaOOu1bL8Jnck9GltKu8UdWth1HqJtxE0H\nyQ3J5vRk7hY+gkH2NFJRcBlSzzW9nRhLJCN5zZhe0r+ocVPZmRCryCIHXeV1yxP6\nIdThxkfNWuoCNpGIr7P1LFrgVkfn8mqHAyfmWtal4XM41atW66VVNdiVAoGBAIsC\nnSeHK041xNhDzZ3MyJJ1wYnBZnKKJi+O3goz/sgU1O7Cd6BWRfYhhFvQ2uLgWwwG\nJ15qlKVxtY5QPQtFaSJUD5vRize8Ci5WEB5AQzS/32eK7MC1PzN1GDf+9zL6x5NK\nSNW7T00BgYaJuCliZhJJblSxR6VZ1VML/MI9V/GdAoGAUBt+EBLwnRjibATpK04p\n//s1k7ryFJ4mdIM7VRg+tX2TqzqSIKI/us+OXlhSi7hCqGoPnfly8p0cVMLg+QI1\ncKRTxqCDGCPKKgwiYfY2MfEjAXyq0/+nDSJBJdt+YOUKtctu0wk49Q7HIVq8klHH\nifoGW4YPiv3sQoUiXG22F6M=\n-----END PRIVATE KEY-----\n",
+  "client_email": "service@mental-triage.iam.gserviceaccount.com",
+  "client_id": "109070517698914150009",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/service%40mental-triage.iam.gserviceaccount.com"
+}

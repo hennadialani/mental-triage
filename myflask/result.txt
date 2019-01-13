@@ -1,0 +1,1 @@
+Sentence 0 has a sentiment score of 0.600000023842Overall Sentiment: score of 0.600000023842 with magnitude of 0.600000023842
