@@ -19,7 +19,7 @@ def voice():
     #gath = Gather(action = "/part2", input = "speech", method = "GET")
     #gath.say("Recording 1 start!", voice="alice")
     #resp.append(gath)
-    resp.say("What to say?", voice="alice")
+    resp.say("Welcome to mental triage. How have you been feeling lately?", voice="alice")
     resp.record(action="/process",timeout = 5,transcribe = True, transcribeCallback = "/transcribeOutput", playBeep = False)
     resp.say("Sorry, I didn't get that. Please try calling again", voice = "alice")
     return str(resp)
