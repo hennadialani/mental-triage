@@ -7,4 +7,8 @@ sentence_no = [w[-1:] for w in sentence_no]
 overall_sentiment = re.findall('Sentiment: score of [0-9].[0-9]', text)
 overall_sentiment = [w[-3:] for w in overall_sentiment]
 overall_sentiment = overall_sentiment*len(sentence_no)
-print(overall_sentiment == ['0.5']*len(sentence_no))
+magnitude = re.findall('magnitude of [0-9].[0-9]', text)
+magnitude = [w[-3:] for w in overall_sentiment]
+magnitude = magnitude*len(sentence_no)
+print(magnitude[1])
+

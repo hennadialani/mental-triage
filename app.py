@@ -21,11 +21,14 @@ magnitude = magnitude*len(sentence_no)
 #overall_sentiment = ['0.5']*len(sentence_no) #struggling to make the commented code a horizontal line :(
 
 app.layout = html.Div(children=[
-    html.H1(children='Mental Triage',
-        style={
-            'textAlign': 'center',
-            'font-family': 'sans-serif',
-        }),
+    html.Div([
+        html.Img(
+            src='https://github.com/hennadialani/hennadialani.github.io/blob/master/MENTAL%20TRIAGE.png?raw=true',
+            style={
+                'height': '200px',
+                'width': '200px'
+            })
+], style={'textAlign': 'center'}),
     html.Div(children='''
         An NLP assistant for therapists to determine urgency of psychological intervention after a patient's phone call. Mediates the ongoing mental health crisis on college campuses by analyzing sentiment from a person's response to a freeform question standard on psychological screening questionnaires.
     ''',
@@ -33,14 +36,12 @@ app.layout = html.Div(children=[
             'textAlign': 'center',
             'font-family': 'sans-serif'
         }),
-    html.Div([
-        html.Img(src = 'https://raw.githubusercontent.com/hennadialani/mental-triage/frontend/MENTAL%20TRIAGE.png?token=AWEWSTqUJGXALb3MwvD7cwk6w_vpPRAmks5cOpOvwA%3D%3D')]),
 ##Different font - probably try font family
 ##Potentially something to show a phone number so that we can identify which patient this is
 ##Something to identify what magnitude means 
 ##Play with the colors of the lines 
 ##Maybe background color change
-    dcc.Graph(
+dcc.Graph(
         id='example-graph',
         figure={
             'data': [
@@ -49,11 +50,17 @@ app.layout = html.Div(children=[
             ],
             'layout': {
                 'title': 'Sentiment Analyzed Over Call',
+                'font-family': 'sans-serif',
                 'xaxis': {'title': 'Sentence Number'},
                 'yaxis': {'title': 'Sentiment Score'}
             }
         }
-    )
+    ),
+    html.Div([
+        html.P('The overall sentiment score of this caller is '+overall_sentiment[1]+'. Meanwhile, the magnitude of this call indicates how much of the phone call was emotional, at '+magnitude[1]+'.', style={
+            'textAlign': 'center',
+            'font-family': 'sans-serif'
+        })])
 ])
 
 if __name__ == '__main__':
