@@ -21,14 +21,21 @@ app.layout = html.Div(children=[
     html.H1(children='Mental Triage',
         style={
             'textAlign': 'center',
-            'font-family': 'sans-serif'
+            'font-family': 'sans-serif',
+            'images':[dict(
+        source="https://raw.githubusercontent.com/cldougl/plot_images/add_r_img/vox.png",
+        xref="paper", yref="paper",
+        x=1, y=1.05,
+        sizex=0.2, sizey=0.2,
+        xanchor="right", yanchor="bottom"
+      )]
         }),
-
     html.Div(children='''
         An NLP assistant for therapists to determine urgency of psychological intervention after a patient's phone call. Mediates the ongoing mental health crisis on college campuses by analyzing sentiment from a person's response to a freeform question standard on psychological screening questionnaires.
     ''',
         style={
-            'textAlign': 'center'
+            'textAlign': 'center',
+            'font-family': 'sans-serif'
         }),
 ##Different font - probably try font family
 ##Potentially something to show a phone number so that we can identify which patient this is
@@ -39,7 +46,7 @@ app.layout = html.Div(children=[
         id='example-graph',
         figure={
             'data': [
-                {'x': sentence_no, 'y': sentiment_scores, 'type': 'line', 'name': 'Sentence sentiment'},
+                {'x': sentence_no, 'y': sentiment_scores, 'type': 'line', 'name': 'Sentence sentiment', 'color': '#38B6FF'},
                 {'x': sentence_no, 'y': overall_sentiment, 'type': 'line', 'name': 'Overall sentiment'}
             ],
             'layout': {
